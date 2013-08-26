@@ -40,3 +40,6 @@ ows_corebundle:
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 
+mapbender_schemaeditorbundle:
+    resource: "@MapbenderSchemaeditorBundle/Controller/"
+    type: annotation
