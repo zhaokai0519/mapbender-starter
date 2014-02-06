@@ -6,6 +6,9 @@ parameters:
     database_path:     %kernel.root_dir%/db/demo.sqlite
     database_user:     ~
     database_password: ~
+    database_schema_filter:  ~^(mb_|fom_|owsproxy_|migration_).*~
+# database_schema_filter: http://symfony.com/doc/2.1/bundles/DoctrineMigrationsBundle/index.html#manual-tables
+# database_schema_filter for an oracle database: ~^(MB_|FOM_|OWSPROXY_|MIGRATION_|mb_|fom_|owsproxy|migration_).*~
 
     mailer_transport:  smtp
     mailer_host:       localhost

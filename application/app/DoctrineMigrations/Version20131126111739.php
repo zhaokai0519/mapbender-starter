@@ -7,8 +7,9 @@ use Doctrine\DBAL\Schema\Schema;
 
 /**
  * Auto-generated Migration: Please modify to your needs!
+ * Version20131126111739 -> Mapbender v3.0.2.0
  */
-class Version3_0_2_0 extends AbstractMigration
+class Version20131126111739 extends AbstractMigration
 {
 
     public function up(Schema $schema)
