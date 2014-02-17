@@ -20,7 +20,8 @@ class DoctrineMigrationsTemplate extends AbstractMigration
         } else if ($this->connection->getDatabasePlatform()->getName() === "mysql") {
             
         } else if ($this->connection->getDatabasePlatform()->getName() === "sqlite") {
-            
+            $this->abortIf(true,
+                'The database type "sqlite" isn\'t supported (missing ALTER TABLE statement).');
         } else {
             $this->abortIf(true,
                 'The database type "' . $this->connection->getDatabasePlatform()->getName() . " isn't supoorted.");
@@ -36,7 +37,8 @@ class DoctrineMigrationsTemplate extends AbstractMigration
         } else if ($this->connection->getDatabasePlatform()->getName() === "mysql") {
             
         } else if ($this->connection->getDatabasePlatform()->getName() === "sqlite") {
-            
+            $this->abortIf(true,
+                'The database type "sqlite" isn\'t supported (missing ALTER TABLE statement).');
         } else {
             $this->abortIf(true,
                 'The database type "' . $this->connection->getDatabasePlatform()->getName() . " isn't supoorted.");
