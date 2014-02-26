@@ -1,0 +1,14 @@
+modules:
+    mapbender:
+        path: 'mapbender/DoctrineMigrations'
+        schema_filter: ~^(mb_|migration_|acl_).*~
+#        schema_filter: ~^(MB_|MIGRATION_|ACL_|mb_|migration_|acl_).*~ ORACLE
+    fom:
+        path: 'fom/DoctrineMigrations'
+        schema_filter: ~^(fom_|migration_|acl_).*~
+#        schema_filter: ~^(FOM_|MIGRATION_|ACL_|fom_|migration_|acl_).*~ ORACLE
+    owsproxy:
+        path: 'owsproxy/DoctrineMigrations'
+        schema_filter: ~^(owsproxy_|migration_|acl_).*~
+#        schema_filter: ~^(OWSPROXY_|MIGRATION_|ACL_|owsproxy_|migration_|acl_).*~ ORACLE
+        
