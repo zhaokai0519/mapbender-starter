@@ -22,7 +22,7 @@
         "friendsofsymfony/jsrouting-bundle": "1.5.*",
         "kriswallsmith/buzz": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "toooni/fpdf": "dev-master",
+        "tecnick.com/tcpdf": "dev-master",
         "arsgeografica/signing": "1.1.*"
     },
     "scripts": {
