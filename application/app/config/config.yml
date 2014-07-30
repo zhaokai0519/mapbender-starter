@@ -18,6 +18,8 @@ framework:
         cookie_httponly: true
         cookie_secure: %cookie_secure%
         cookie_lifetime: %cookie_lifetime%
+    serializer:
+        enabled: true
 
 
 # Twig Configuration
