@@ -1,7 +1,14 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-
+    
+parameters:
+    pdo.db_options:
+        db_table: fom_session
+        db_id_col: session_id
+        db_data_col: session_value
+        db_time_col: session_time
+        
 framework:
     #esi:             ~
     translator:      { fallback: %fallback_locale% }
@@ -18,9 +25,23 @@ framework:
         cookie_httponly: true
         cookie_secure: %cookie_secure%
         cookie_lifetime: %cookie_lifetime%
+        handler_id: session.handler.pdo
     serializer:
         enabled: true
 
+services:
+    pdo:
+        class: PDO
+        arguments:
+            - "pgsql:host=%database_host%;port=%database_port%;dbname=%database_name%"
+            - "%database_user%"
+            - "%database_password%"
+        calls:
+            - [setAttribute, [3, 2]] # \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION
+
+    session.handler.pdo:
+        class:     Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+        arguments: ["@pdo", "%pdo.db_options%"]
 
 # Twig Configuration
 twig:
